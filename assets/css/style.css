@@ -160,7 +160,7 @@ p {
     text-shadow: black 1px 0px;
 }
 
-#menu {
+#menuContainer {
   right: 8px;
   position: fixed;
   top: 8px;
@@ -175,27 +175,30 @@ p {
   transition: .3s;
   border-radius: 4px;
   min-width: 32px;
-  #options {
-    display: none;
-    min-width: 200px;
-    padding: 8px;
-    div {
-      display: flex;
-      margin-bottom: 8px;
-    }
+}
+
+#optionsMenu {
+  display: none;
+  min-width: 200px;
+  padding: 8px;
+  div {
+    display: flex;
+    margin-bottom: 8px;
   }
-  #menuIcon, #closeIcon {
-    max-width: 40px;
-    background: none;
-    color: white;
-    cursor: pointer;
-    border: none;
-  }
-  #closeIcon {
-    position: absolute;
-    top: 4px;
-    right: 4px;
-  }
+}
+
+#menuIcon, #closeIcon {
+  max-width: 40px;
+  background: none;
+  color: white;
+  cursor: pointer;
+  border: none;
+}
+
+#closeIcon {
+  position: absolute;
+  top: 4px;
+  right: 4px;
 }
 
 #presTogl, #distTogl {
