@@ -8,9 +8,8 @@ body {
     color: white;
 }
 
-p{
-    margin: 0;
-    display: none;
+p {
+  margin: 0;
 }
 
 .zoneTitle {
@@ -58,7 +57,7 @@ p{
     opacity: .6;
 }
 
-#goSurface, #goDeep {
+#top, #bottom {
     position: absolute;
     width: 100%;
     font-size: 2em;
@@ -72,7 +71,7 @@ p{
     margin-left: -15px;
 }
 
-#goSurface {
+#top {
     width: 0;
     height: 0;
     border-left: 15px solid transparent;
@@ -81,7 +80,7 @@ p{
     top: -20px;
 }
 
-#goDeep {
+#bottom {
     width: 0;
     height: 0;
     border-left: 15px solid transparent;
@@ -161,135 +160,137 @@ p{
     text-shadow: black 1px 0px;
 }
 
-.unitTogl {
-    position: fixed;
-    cursor: pointer;
-    top: 10px;
-    display: block;
-    margin: 0;
-    font-size: 1em;
-    line-height: 2em;
-    color: white;
-    text-align: center;
-    background-color: rgb(60, 60, 60);
-    background-color: rgba(60, 60, 60, 0.685);
-    -webkit-transition: .3s;
-    transition: .3s;
-}
-
 #menu {
-    right: 10px;
-    width: 40px;
-}
-
-#distTogl {
-    right: 60px;
-    width: 40px;
-}
-
-#presTogl {
-    right: 110px;
-    width: 50px;
-}
-
-#mapTogl {
-    right: 170px;
-    width: 50px;
-    text-decoration: none;
-}
-
-#linesTogl {
-    right: 230px;
-    width: 50px;
-    text-decoration: line-through;
-}
-
-#optionsMenu {
+  right: 8px;
+  position: fixed;
+  top: 8px;
+  display: block;
+  margin: 0;
+  font-size: 1em;
+  line-height: 2em;
+  color: white;
+  text-align: center;
+  background-color: rgba(60, 60, 60, 0.7);
+  -webkit-transition: .3s;
+  transition: .3s;
+  border-radius: 4px;
+  min-width: 32px;
+  #options {
     display: none;
+    min-width: 200px;
+    padding: 8px;
+    div {
+      display: flex;
+      margin-bottom: 8px;
+    }
+  }
+  #menuIcon, #closeIcon {
+    max-width: 40px;
+    background: none;
+    color: white;
+    cursor: pointer;
+    border: none;
+  }
+  #closeIcon {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+  }
+}
+
+#presTogl, #distTogl {
+  margin-left: 4px;
+  cursor: pointer;
+}
+
+#mapTogl, #linesTogl {
+  margin-left: 4px;
+  cursor: pointer;
 }
 
 .zoneDiv {
-    display: block;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+  display: block;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .top {
-    position: relative;
-    width: 100%;
-    height: 500px;
-    margin: 0;
-    display: flex;
-    background: rgb(75, 121, 255);
-    background: -moz-linear-gradient(45deg, rgba(75, 121, 255, 1) 0%, rgba(113, 211, 255, 1) 70%, rgba(255, 255, 218, 1) 100%);
-    background: -webkit-linear-gradient(45deg, rgba(75, 121, 255, 1) 0%, rgba(113, 211, 255, 1) 70%, rgba(255, 255, 218, 1) 100%);
-    background: linear-gradient(45deg, rgba(75, 121, 255, 1) 0%, rgba(113, 211, 255, 1) 70%, rgba(255, 255, 218, 1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4b79ff", endColorstr="#ffffda", GradientType=1);
+  position: relative;
+  width: 100%;
+  height: 500px;
+  margin: 0;
+  display: flex;
+  background: rgb(75, 121, 255);
+  background: -moz-linear-gradient(45deg, rgba(75, 121, 255, 1) 0%, rgba(113, 211, 255, 1) 70%, rgba(255, 255, 218, 1) 100%);
+  background: -webkit-linear-gradient(45deg, rgba(75, 121, 255, 1) 0%, rgba(113, 211, 255, 1) 70%, rgba(255, 255, 218, 1) 100%);
+  background: linear-gradient(45deg, rgba(75, 121, 255, 1) 0%, rgba(113, 211, 255, 1) 70%, rgba(255, 255, 218, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4b79ff", endColorstr="#ffffda", GradientType=1);
 }
 
 .land {
-    position: absolute;
-    bottom: 0;
-    background: rgb(116, 221, 94);
-    background: -moz-linear-gradient(45deg, rgba(18, 38, 25, 1) 0%, rgba(30, 85, 42, 1) 50%, rgba(116, 221, 94, 1) 100%);
-    background: -webkit-linear-gradient(45deg, rgba(18, 38, 25, 1) 0%, rgba(30, 85, 42, 1) 50%, rgba(116, 221, 94, 1) 100%);
-    background: linear-gradient(45deg, rgba(18, 38, 25, 1) 0%, rgba(30, 85, 42, 1) 50%, rgba(116, 221, 94, 1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#122619", endColorstr="#74dd5e", GradientType=1);
-    height: 60%;
-    border-top-right-radius: 50%;
-    border-top-left-radius: 50%;
-    width: 100%;
-    display: block;
+  position: absolute;
+  bottom: 0;
+  background: rgb(116, 221, 94);
+  background: -moz-linear-gradient(45deg, rgba(18, 38, 25, 1) 0%, rgba(30, 85, 42, 1) 50%, rgba(116, 221, 94, 1) 100%);
+  background: -webkit-linear-gradient(45deg, rgba(18, 38, 25, 1) 0%, rgba(30, 85, 42, 1) 50%, rgba(116, 221, 94, 1) 100%);
+  background: linear-gradient(45deg, rgba(18, 38, 25, 1) 0%, rgba(30, 85, 42, 1) 50%, rgba(116, 221, 94, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#122619", endColorstr="#74dd5e", GradientType=1);
+  height: 60%;
+  border-top-right-radius: 50%;
+  border-top-left-radius: 50%;
+  width: 100%;
+  display: block;
 }
 
 .sand {
-    position: absolute;
-    bottom: 0;
-    background-color: #e5d2b1;
-    background-image: linear-gradient(#e5d2b1, #a98345);
-    height: 20%;
-    width: 100%;
-    display: block;
+  position: absolute;
+  bottom: 0;
+  background-color: #e5d2b1;
+  background-image: linear-gradient(#e5d2b1, #a98345);
+  height: 20%;
+  width: 100%;
+  display: block;
 }
 
 .foam {
-    position: absolute;
-    bottom: 0;
-    height: 10%;
-    background: rgb(83, 200, 238);
-    background: -moz-linear-gradient(0deg, rgba(83, 200, 238, 1) 5%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
-    background: -webkit-linear-gradient(0deg, rgba(83, 200, 238, 1) 5%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
-    background: linear-gradient(0deg, rgba(83, 200, 238, 1) 5%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#53c8ee", endColorstr="#ffffff", GradientType=1);
-    display: block;
-    width: 100%;
+  position: absolute;
+  bottom: 0;
+  height: 10%;
+  background: rgb(83, 200, 238);
+  background: -moz-linear-gradient(0deg, rgba(83, 200, 238, 1) 5%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
+  background: -webkit-linear-gradient(0deg, rgba(83, 200, 238, 1) 5%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(0deg, rgba(83, 200, 238, 1) 5%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#53c8ee", endColorstr="#ffffff", GradientType=1);
+  display: block;
+  width: 100%;
 }
 
 .ocean h4, .land h4 {
-    font-size: 2em;
-    color: white;
-    align-self: flex-end;
-    margin-bottom: 0;
-    width: 100%;
-    text-align: right;
-    margin-right: .5em;
-    text-shadow: 1px 1px black;
-    display: none;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+  font-size: 2em;
+  color: white;
+  align-self: flex-end;
+  margin-bottom: 0;
+  width: 100%;
+  text-align: right;
+  margin-right: .5em;
+  text-shadow: 1px 1px black;
+  display: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 #wholeocean {
-    position: relative;
+  position: relative;
 }
 
 .ocean {
-    width: 100%;
-    height: 1000px;
-    margin: 0;
-    display: flex;
+  width: 100%;
+  height: 1000px;
+  margin: 0;
+  display: flex;
+  outline: none;
 }
 
 .sunlit {

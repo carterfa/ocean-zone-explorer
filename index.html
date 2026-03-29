@@ -1,97 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Ocean Zones</title>
-</head>
-<div class="top">
-    <div class="land"></div>
-    <div class="sand"></div>
-    <div class="foam"></div>
-</div>
-
-<div id="HUD">
-    <div class="minimap">
-        <div class="mapNav" id="goSurface"></div>
-        <div class="mapNav mapZone" id="mapEpi"><span class="tooltiptext" id="mapEpiText">Epipelagic</span></div>
-        <div class="mapNav mapZone" id="mapMeso"><span class="tooltiptext" id="mapMesoText">Mesopelagic</span></div>
-        <div class="mapNav mapZone" id="mapBathy"><span class="tooltiptext" id="mapBathyText">Bathypelagic</span></div>
-        <div class="mapNav mapZone" id="mapAbyss"><span class="tooltiptext" id="mapAbyssText">Abyssopelagic</span></div>
-        <div class="mapNav mapZone" id="mapHado"><span class="tooltiptext" id="mapHadoText">Hadopelagic</span></div>
-        <div class="mapNav" id="goDeep"></div>
+  </head>
+  <body>
+    <div class="top" id="surface">
+      <div class="land"></div>
+      <div class="sand"></div>
+      <div class="foam"></div>
+    </div>
+    <div id="HUD">
+      <div class="minimap">
+        <div class="mapNav" id="top" data-zone-id="surface"></div>
+        <div class="mapNav mapZone" id="mapEpi" data-zone-id="epiZone">
+          <span class="tooltiptext" id="mapEpiText">Epipelagic</span>
+        </div>
+        <div class="mapNav mapZone" id="mapMeso" data-zone-id="mesoZone">
+          <span class="tooltiptext" id="mapMesoText">Mesopelagic</span>
+        </div>
+        <div class="mapNav mapZone" id="mapBathy" data-zone-id="bathyZone">
+          <span class="tooltiptext" id="mapBathyText">Bathypelagic</span>
+        </div>
+        <div class="mapNav mapZone" id="mapAbyss" data-zone-id="abyssZone">
+          <span class="tooltiptext" id="mapAbyssText">Abyssopelagic</span>
+        </div>
+        <div class="mapNav mapZone" id="mapHado" data-zone-id="hadoZone">
+          <span class="tooltiptext" id="mapHadoText">Hadopelagic</span>
+        </div>
+        <div class="mapNav" id="bottom" data-zone-id="oceanfloor"></div>
         <div id="mapslider"></div>
+      </div>
+      <div id="menu">
+        <button id="menuIcon">&#9776;</button>
+        <div id="options">
+          <button id="closeIcon">&#10005;</button>
+          <div>
+            Depth Units:
+            <button id="distTogl">m</button>
+          </div>
+          <div>
+            Pressure Units:
+            <button id="presTogl">atm</button>
+          </div>
+          <div>
+            <label for="mapcheckbox">Display map:</label>
+            <input type="checkbox" id="mapTogl" name="displaymapcheckbox" value="displaymapcheckbox" checked />
+          </div>
+          <div>
+            <label for="mapcheckbox">Display guidelines:</label>
+            <input type="checkbox" id="linesTogl" name="displayguidelines" value="displayguidelines" />
+          </div>
+        </div>
+      </div>
+      <h1 id="presTxt">1atm</h1>
+      <h1 id="depthTxt">0m</h1>
     </div>
-    <p class="unitTogl" id="menu">&#9776;</p>
-    <div id="optionsMenu">
-        <p class="unitTogl" id="distTogl">m</p>
-        <p class="unitTogl" id="presTogl">atm</p>
-        <p class="unitTogl" id="mapTogl">map</p>
-        <p class="unitTogl" id="linesTogl">lines</p>
-    </div>
-    <h1 id="presTxt">1atm</h1>
-    <h1 id="depthTxt">0m</h1>
-</div>
-<div id="wholeocean">
+  <div id="wholeocean">
     <div class="living" id="scubadiver">
-        <img src="assets/images/ScubaDiver.png" alt="scuba diver" />
+      <img src="assets/images/ScubaDiver.png" alt="scuba diver" />
     </div>
     <div class="living" id="whaleshark">
-        <img src="assets/images/WhaleShark.png" alt="whale shark" />
+      <img src="assets/images/WhaleShark.png" alt="whale shark" />
     </div>
-    <div class="living" id="turtle"><img src="assets/images/Turtle.png" alt="sea turtle" /></div>
-    <div class="living" id="swordfish"><img src="assets/images/Swordfish.png" alt="swordfish" /></div>
-    <div class="living" id="oarfish"><img src="assets/images/Oarfish.png" alt="oarfish" /></div>
+    <div class="living" id="turtle">
+      <img src="assets/images/Turtle.png" alt="sea turtle" />
+    </div>
+    <div class="living" id="swordfish">
+      <img src="assets/images/Swordfish.png" alt="swordfish" />
+    </div>
+    <div class="living" id="oarfish">
+      <img src="assets/images/Oarfish.png" alt="oarfish" />
+    </div>
     <div class="living" id="giantsquid">
-        <img src="assets/images/GiantSquid.png" alt="giant squid" />
+      <img src="assets/images/GiantSquid.png" alt="giant squid" />
     </div>
-    <div class="living" id="spermwhale"><img src="assets/images/SpermWhale.png" alt="sperm whale" /></div>
-    <div class="living" id="elephantseal"><img src="assets/images/ElephantSeal.png" alt="elephant seal" /></div>
+    <div class="living" id="spermwhale">
+      <img src="assets/images/SpermWhale.png" alt="sperm whale" />
+    </div>
+    <div class="living" id="elephantseal">
+      <img src="assets/images/ElephantSeal.png" alt="elephant seal" />
+    </div>
     <div class="living" id="jellies">
-        <img src="assets/images/Jellies.png" alt="jellies" />
+      <img src="assets/images/Jellies.png" alt="jellies" />
     </div>
     <div class="living" id="angler">
-        <div id="lure"></div><img src="assets/images/Angler.png" alt="angler" />
+      <div id="lure"></div><img src="assets/images/Angler.png" alt="angler" />
     </div>
-    <div class="living" id="gulpereel"><img src="assets/images/GulperEel.png" alt="gulper eel" /></div>
+    <div class="living" id="gulpereel">
+      <img src="assets/images/GulperEel.png" alt="gulper eel" />
+    </div>
     <div class="living" id="beakedwhale">
-        <img src="assets/images/BeakedWhale.png" alt="beaked whale" />
+      <img src="assets/images/BeakedWhale.png" alt="beaked whale" />
     </div>
-    <div class="living" id="dumbo"><img src="assets/images/Dumbo.png" alt="dumbo" /></div>
+    <div class="living" id="dumbo">
+      <img src="assets/images/Dumbo.png" alt="dumbo" />
+    </div>
     <div class="living" id="whalebones">
-        <img src="assets/images/WhaleBones.png" alt="whale bones" />
+      <img src="assets/images/WhaleBones.png" alt="whale bones" />
     </div>
-    <div class="living" id="tripodfish"><img src="assets/images/Tripodfish.png" alt="tripodfish" /></div>
-    <div class="living" id="bigfinsquid"><img src="assets/images/BigfinSquid.png" alt="bigfin squid" /></div>
+    <div class="living" id="tripodfish">
+      <img src="assets/images/Tripodfish.png" alt="tripodfish" />
+    </div>
+    <div class="living" id="bigfinsquid">
+      <img src="assets/images/BigfinSquid.png" alt="bigfin squid" />
+    </div>
     <div class="living" id="snailfish">
-        <img src="assets/images/Snailfish.png" alt="snailfish" />
+      <img src="assets/images/Snailfish.png" alt="snailfish" />
     </div>
-
     <div class="cliff">
-        <div class="clifftop"></div>
+      <div class="clifftop"></div>
     </div>
     <div class="trench">
-        <img class="living" id="worms" src="assets/images/Worms.png" alt="worms" />
-
+      <img class="living" id="worms" src="assets/images/Worms.png" alt="worms" />
     </div>
     <section class="zoneDiv">
-        <!-- 0-200m -->
-        <div class="ocean sunlit">
-            <h1 class="zoneTitle" id="epiZone">Epipelagic Zone</h1>
-            <h4>100m</h4>
-        </div>
-        <div class="ocean sunlitLast">
-            <h4>200m</h4>
-        </div>
+      <!-- 0-200m -->
+      <div class="ocean sunlit">
+        <h1 class="zoneTitle" id="epiZone">Epipelagic Zone</h1>
+        <h4>100m</h4>
+      </div>
+      <div class="ocean sunlitLast">
+        <h4>200m</h4>
+      </div>
     </section>
     <section class="zoneDiv">
         <!-- 200-1000m -->
         <div class="ocean twilit">
-            <h1 class="zoneTitle" id="mesoZone">Mesopelagic Zone</h1>
-            <h4>300m</h4>
+          <h1 class="zoneTitle" id="mesoZone">Mesopelagic Zone</h1>
+          <h4>300m</h4>
         </div>
         <div class="ocean twilit">
             <h4>400m</h4>
@@ -118,163 +158,163 @@
     <section class="zoneDiv">
         <!-- 1000-2000m -->
         <div class="ocean midnight">
-            <h1 class="zoneTitle" id="bathyZone">Bathypelagic Zone</h1>
-            <h4>1100m</h4>
+          <h1 class="zoneTitle" id="bathyZone">Bathypelagic Zone</h1>
+          <h4>1100m</h4>
         </div>
         <div class="ocean midnight">
-            <h4>1200m</h4>
+          <h4>1200m</h4>
         </div>
         <div class="ocean midnight">
-            <h4>1300m</h4>
+          <h4>1300m</h4>
         </div>
         <div class="ocean midnight">
-            <h4>1400m</h4>
+          <h4>1400m</h4>
         </div>
         <div class="ocean midnight">
-            <h4>1500m</h4>
+          <h4>1500m</h4>
         </div>
         <div class="ocean midnight">
-            <h4>1600m</h4>
+          <h4>1600m</h4>
         </div>
         <div class="ocean midnight">
-            <h4>1700m</h4>
+          <h4>1700m</h4>
         </div>
         <div class="ocean midnight">
-            <h4>1800m</h4>
+          <h4>1800m</h4>
         </div>
         <div class="ocean midnight">
-            <h4>1900m</h4>
+          <h4>1900m</h4>
         </div>
         <div class="ocean midnight">
-            <h4>2000m</h4>
+          <h4>2000m</h4>
         </div>
         <!-- 2000-3000m -->
         <div class="ocean midnight">
-            <h4>2100m</h4>
+          <h4>2100m</h4>
         </div>
         <div class="ocean midnight">
-            <h4>2200m</h4>
+          <h4>2200m</h4>
         </div>
         <div class="ocean midnight">
-            <h4>2300m</h4>
+          <h4>2300m</h4>
         </div>
         <div class="ocean midnight">
-            <h4>2400m</h4>
+          <h4>2400m</h4>
         </div>
         <div class="ocean midnight">
-            <h4>2500m</h4>
+          <h4>2500m</h4>
         </div>
         <div class="ocean midnight">
-            <h4>2600m</h4>
+          <h4>2600m</h4>
         </div>
         <div class="ocean midnight">
-            <h4>2700m</h4>
+          <h4>2700m</h4>
         </div>
         <div class="ocean midnight">
-            <h4>2800m</h4>
+          <h4>2800m</h4>
         </div>
         <div class="ocean midnight">
-            <h4>2900m</h4>
+          <h4>2900m</h4>
         </div>
         <div class="ocean midnight">
-            <h4>3000m</h4>
+          <h4>3000m</h4>
         </div>
         <!-- 3000-4000m -->
         <div class="ocean midnight">
-            <h4>3100m</h4>
+          <h4>3100m</h4>
         </div>
         <div class="ocean midnight">
-            <h4>3200m</h4>
+          <h4>3200m</h4>
         </div>
         <div class="ocean midnight">
-            <h4>3300m</h4>
+          <h4>3300m</h4>
         </div>
         <div class="ocean midnight">
-            <h4>3400m</h4>
+          <h4>3400m</h4>
         </div>
         <div class="ocean midnight">
-            <h4>3500m</h4>
+          <h4>3500m</h4>
         </div>
         <div class="ocean midnight">
-            <h4>3600m</h4>
+          <h4>3600m</h4>
         </div>
         <div class="ocean midnight">
-            <h4>3700m</h4>
+          <h4>3700m</h4>
         </div>
         <div class="ocean midnight">
-            <h4>3800m</h4>
+          <h4>3800m</h4>
         </div>
         <div class="ocean midnight">
-            <h4>3900m</h4>
+          <h4>3900m</h4>
         </div>
         <div class="ocean midnight">
-            <h4>4000m</h4>
+          <h4>4000m</h4>
         </div>
     </section>
     <section class="zoneDiv">
-        <!-- 4000-5000m -->
-        <div class="ocean midnight">
-            <h1 class="zoneTitle" id="abyssZone">Abyssopelagic Zone</h1>
-            <h4>4100m</h4>
-        </div>
-        <div class="ocean midnight">
-            <h4>4200m</h4>
-        </div>
-        <div class="ocean midnight">
-            <h4>4300m</h4>
-        </div>
-        <div class="ocean midnight">
-            <h4>4400m</h4>
-        </div>
-        <div class="ocean midnight">
-            <h4>4500m</h4>
-        </div>
-        <div class="ocean midnight">
-            <h4>4600m</h4>
-        </div>
-        <div class="ocean midnight">
-            <h4>4700m</h4>
-        </div>
-        <div class="ocean midnight">
-            <h4>4800m</h4>
-        </div>
-        <div class="ocean midnight">
-            <h4>4900m</h4>
-        </div>
-        <div class="ocean midnight">
-            <h4>5000m</h4>
-        </div>
-        <!-- 5000-6000m -->
-        <div class="ocean midnight">
-            <h4>5100m</h4>
-        </div>
-        <div class="ocean midnight">
-            <h4>5200m</h4>
-        </div>
-        <div class="ocean midnight">
-            <h4>5300m</h4>
-        </div>
-        <div class="ocean midnight">
-            <h4>5400m</h4>
-        </div>
-        <div class="ocean midnight">
-            <h4>5500m</h4>
-        </div>
-        <div class="ocean midnight">
-            <h4>5600m</h4>
-        </div>
-        <div class="ocean midnight">
-            <h4>5700m</h4>
-        </div>
-        <div class="ocean midnight">
-            <h4>5800m</h4>
-        </div>
-        <div class="ocean midnight">
-            <h4>5900m</h4>
-        </div>
-        <div class="ocean midnight">
-            <h4>6000m</h4>
-        </div>
+      <!-- 4000-5000m -->
+      <div class="ocean midnight">
+        <h1 class="zoneTitle" id="abyssZone">Abyssopelagic Zone</h1>
+        <h4>4100m</h4>
+      </div>
+      <div class="ocean midnight">
+        <h4>4200m</h4>
+      </div>
+      <div class="ocean midnight">
+        <h4>4300m</h4>
+      </div>
+      <div class="ocean midnight">
+        <h4>4400m</h4>
+      </div>
+      <div class="ocean midnight">
+        <h4>4500m</h4>
+      </div>
+      <div class="ocean midnight">
+        <h4>4600m</h4>
+      </div>
+      <div class="ocean midnight">
+        <h4>4700m</h4>
+      </div>
+      <div class="ocean midnight">
+        <h4>4800m</h4>
+      </div>
+      <div class="ocean midnight">
+        <h4>4900m</h4>
+      </div>
+      <div class="ocean midnight">
+        <h4>5000m</h4>
+      </div>
+      <!-- 5000-6000m -->
+      <div class="ocean midnight">
+        <h4>5100m</h4>
+      </div>
+      <div class="ocean midnight">
+        <h4>5200m</h4>
+      </div>
+      <div class="ocean midnight">
+        <h4>5300m</h4>
+      </div>
+      <div class="ocean midnight">
+        <h4>5400m</h4>
+      </div>
+      <div class="ocean midnight">
+        <h4>5500m</h4>
+      </div>
+      <div class="ocean midnight">
+        <h4>5600m</h4>
+      </div>
+      <div class="ocean midnight">
+        <h4>5700m</h4>
+      </div>
+      <div class="ocean midnight">
+        <h4>5800m</h4>
+      </div>
+      <div class="ocean midnight">
+        <h4>5900m</h4>
+      </div>
+      <div class="ocean midnight">
+        <h4>6000m</h4>
+      </div>
     </section>
     <section class="zoneDiv">
         <!-- 6000-7000m -->
@@ -434,13 +474,10 @@
             <h4>11000m</h4>
         </div>
     </section>
-</div>
-<div class="oceanfloor">
-
-</div>
-<!-- link to javascript and jquery-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="assets/javascript/script.js"></script>
-</body>
-
+    </div>
+    <div class="oceanfloor" id="oceanfloor" />
+    <!-- link to javascript and jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="assets/javascript/script.js"></script>
+  </body>
 </html>
