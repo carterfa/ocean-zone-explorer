@@ -23,13 +23,13 @@ p {
 }
 
 #HUD {
-    position: fixed;
-    bottom: 50%;
-    right: 0;
-    margin: 0;
-    padding: 0;
-    border-bottom: white solid 2px;
-    z-index: 5;
+  position: fixed;
+  bottom: 50%;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  border-bottom: white solid 2px;
+  z-index: 5;
 }
 
 .minimap {
@@ -166,15 +166,13 @@ p {
   top: 8px;
   display: block;
   margin: 0;
-  font-size: 1em;
-  line-height: 2em;
+  font-size: 1rem;
   color: white;
   text-align: center;
   background-color: rgba(60, 60, 60, 0.7);
   -webkit-transition: .3s;
   transition: .3s;
   border-radius: 4px;
-  min-width: 32px;
 }
 
 #optionsMenu {
@@ -185,6 +183,11 @@ p {
     display: flex;
     margin-bottom: 8px;
   }
+}
+
+#menuIcon {
+  width: 32px;
+  height: 32px;
 }
 
 #menuIcon, #closeIcon {

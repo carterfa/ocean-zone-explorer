@@ -204,7 +204,6 @@ $(document).ready(function () {
   //lines visibility
   $("#linesTogl").on("click", function () {
     const hasOutline = $(".ocean").css("outline") === 'rgb(255, 255, 255) solid 2px'
-    console.log( $(".ocean").css("outline"), hasOutline)
     if (hasOutline) {
       $(".ocean").css("outline", "none");
     } else {
@@ -214,20 +213,19 @@ $(document).ready(function () {
 
   $(".mapNav").click(function (event) {
     const mapSectionClicked = $(this).data("zone-id")
-    console.log('map', mapSectionClicked)
     $(`#${mapSectionClicked}`)[0].scrollIntoView({ behavior: 'smooth' })
   });
 
   //changes options visibility
   $("#menuIcon").on("click", function () {
-    $("#options").toggle();
+    $("#optionsMenu").css("display", "block");
     $("#menuIcon").css("display", "none");
     $("#closeIcon").css("display", "block");
   });
 
   $("#closeIcon").on("click", function () {
-    $("#options").toggle();
+    $("#optionsMenu").css("display", "none");
     $("#closeIcon").css("display", "none");
-    $("#menuIcon").toggle();
+    $("#menuIcon").css("display", "block");
   });
 })

@@ -13,6 +13,28 @@
       <div class="sand"></div>
       <div class="foam"></div>
     </div>
+    <div id="menuContainer">
+      <button id="menuIcon">&#9776;</button>
+      <div id="optionsMenu">
+        <button id="closeIcon">&#10005;</button>
+        <div>
+          Depth Units:
+          <button id="distTogl">m</button>
+        </div>
+        <div>
+          Pressure Units:
+          <button id="presTogl">atm</button>
+        </div>
+        <div>
+          <label for="mapcheckbox">Display map:</label>
+          <input type="checkbox" id="mapTogl" name="displaymapcheckbox" value="displaymapcheckbox" checked />
+        </div>
+        <div>
+          <label for="mapcheckbox">Display guidelines:</label>
+          <input type="checkbox" id="linesTogl" name="displayguidelines" value="displayguidelines" />
+        </div>
+      </div>
+    </div>
     <div id="HUD">
       <div class="minimap">
         <div class="mapNav" id="top" data-zone-id="surface"></div>
@@ -33,28 +55,6 @@
         </div>
         <div class="mapNav" id="bottom" data-zone-id="oceanfloor"></div>
         <div id="mapslider"></div>
-      </div>
-      <div id="menuContainer">
-        <button id="menuIcon">&#9776;</button>
-        <div id="optionsMenu">
-          <button id="closeIcon">&#10005;</button>
-          <div>
-            Depth Units:
-            <button id="distTogl">m</button>
-          </div>
-          <div>
-            Pressure Units:
-            <button id="presTogl">atm</button>
-          </div>
-          <div>
-            <label for="mapcheckbox">Display map:</label>
-            <input type="checkbox" id="mapTogl" name="displaymapcheckbox" value="displaymapcheckbox" checked />
-          </div>
-          <div>
-            <label for="mapcheckbox">Display guidelines:</label>
-            <input type="checkbox" id="linesTogl" name="displayguidelines" value="displayguidelines" />
-          </div>
-        </div>
       </div>
       <h1 id="presTxt">1atm</h1>
       <h1 id="depthTxt">0m</h1>
